@@ -12,7 +12,7 @@ public class Workout {
     private final String name;
 
     public Workout() {
-        this.name = "hi";
+        this.name = "";
     }
 
     public Workout(String name) {

@@ -16,12 +16,12 @@ public class WorkoutController {
         this.workoutRepository = workoutRepository;
     }
 
-    @GetMapping("/users")
+    @GetMapping("/workouts")
     public List<Workout> getUsers() {
         return (List<Workout>) workoutRepository.findAll();
     }
 
-    @PostMapping("/users")
+    @PostMapping("/workouts")
     void addUser(@RequestBody Workout wkt) {
         workoutRepository.save(wkt);
     }
