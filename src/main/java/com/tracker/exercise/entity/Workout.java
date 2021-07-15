@@ -11,6 +11,10 @@ public class Workout {
 
     private final String name;
 
+    public Workout() {
+        this.name = "hi";
+    }
+
     public Workout(String name) {
         this.name = name;
     }
