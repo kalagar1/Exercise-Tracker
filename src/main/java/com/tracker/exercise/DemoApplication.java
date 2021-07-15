@@ -1,4 +1,4 @@
-package com.tracker.example;
+package com.tracker.exercise;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
