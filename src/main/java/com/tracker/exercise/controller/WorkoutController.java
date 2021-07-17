@@ -17,12 +17,12 @@ public class WorkoutController {
     }
 
     @GetMapping("/workouts")
-    public List<Workout> getUsers() {
+    public List<Workout> getWorkouts() {
         return (List<Workout>) workoutRepository.findAll();
     }
 
     @PostMapping("/workouts")
-    void addUser(@RequestBody Workout wkt) {
+    void addWorkout(@RequestBody Workout wkt) {
         workoutRepository.save(wkt);
     }
 }

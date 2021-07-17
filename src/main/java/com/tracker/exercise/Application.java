@@ -7,6 +7,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.time.LocalDate;
 import java.util.stream.Stream;
 
 @SpringBootApplication
@@ -23,7 +24,7 @@ public class Application {
 	CommandLineRunner init(WorkoutRepository workoutRepository) {
 		return args -> {
 			Stream.of("John", "Julie", "Jennifer", "Helen", "Rachel").forEach(name -> {
-				Workout wkt = new Workout(name);
+				Workout wkt = new Workout(name, LocalDate.now());
 				workoutRepository.save(wkt);
 			});
 			workoutRepository.findAll().forEach(System.out::println);

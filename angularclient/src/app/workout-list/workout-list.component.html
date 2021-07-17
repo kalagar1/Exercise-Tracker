@@ -4,12 +4,14 @@
       <thead class="thead-dark">
       <tr>
         <th scope="col">#</th>
+        <th scope="col">Date</th>
         <th scope="col">Name</th>
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let wkt of workouts">
         <td>{{ wkt.id }}</td>
+        <td>{{ wkt.date }}</td>
         <td>{{ wkt.name }}</td>
       </tr>
       </tbody>
