@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Workout } from '../model/workout';
 import { WorkoutService } from '../service/workout.service';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-workout-list',
@@ -11,13 +13,25 @@ export class WorkoutListComponent implements OnInit {
 
   workouts: Workout[];
 
-  constructor(private workoutService: WorkoutService) {
+  constructor(private route: ActivatedRoute,
+                    private router: Router,
+                    private workoutService: WorkoutService) {
   }
 
+  getData() {
+     this.workoutService.findAll().subscribe(data => {
+             console.log("workout data: ", data);
+             this.workouts = data;
+           });
+    }
+
   ngOnInit() {
-      this.workoutService.findAll().subscribe(data => {
-        this.workouts = data;
-      });
+    this.getData();
   }
+
+  deleteWorkout(id) {
+    this.workoutService.delete(id).subscribe(result => this.getData());
+  }
+
 
 }

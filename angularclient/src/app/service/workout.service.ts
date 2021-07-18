@@ -19,4 +19,8 @@ export class WorkoutService {
   public save(workout: Workout) {
     return this.http.post<Workout>(this.url, workout);
   }
+
+  public delete(id) {
+    return this.http.delete(this.url+"/delete/"+id);
+  }
 }

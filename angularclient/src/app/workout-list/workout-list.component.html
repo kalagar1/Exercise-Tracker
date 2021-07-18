@@ -6,6 +6,8 @@
         <th scope="col">#</th>
         <th scope="col">Date</th>
         <th scope="col">Name</th>
+        <th scope="col">Body</th>
+        <th scope="col">Controls</th>
       </tr>
       </thead>
       <tbody>
@@ -13,6 +15,12 @@
         <td>{{ wkt.id }}</td>
         <td>{{ wkt.date }}</td>
         <td>{{ wkt.name }}</td>
+        <td><pre>{{wkt.body}}</pre></td>
+        <td><input type="submit"
+            class="btn btn-danger"
+                 (click) = "deleteWorkout(wkt.id)" value="Del"> </td>
+
+
       </tr>
       </tbody>
     </table>

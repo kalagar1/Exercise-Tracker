@@ -16,7 +16,7 @@ export class WorkoutFormComponent {
     private route: ActivatedRoute,
       private router: Router,
         private workoutService: WorkoutService) {
-    this.workout = new Workout();
+          this.workout = new Workout();
   }
 
   onSubmit() {

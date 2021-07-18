@@ -18,11 +18,20 @@ public class WorkoutController {
 
     @GetMapping("/workouts")
     public List<Workout> getWorkouts() {
+        System.out.println("\n");
+        workoutRepository.findAll().forEach(System.out::println);
+
         return (List<Workout>) workoutRepository.findAll();
     }
 
     @PostMapping("/workouts")
-    void addWorkout(@RequestBody Workout wkt) {
+    public void addWorkout(@RequestBody Workout wkt) {
         workoutRepository.save(wkt);
     }
+
+    @DeleteMapping("/workouts/delete/{id}")
+    public void deleteWorkout(@PathVariable String id) {
+        workoutRepository.deleteById(Long.valueOf(id));
+    }
+
 }

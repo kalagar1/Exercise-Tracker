@@ -1,6 +1,6 @@
 package com.tracker.exercise.entity;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -10,19 +10,22 @@ public class Workout {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private long id;
     private final String name;
+    private final String body;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MMMM dd, yyyy")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private final LocalDate date;
 
     public Workout() {
         this.date = LocalDate.now();
         this.name = "";
+        this.body = "";
     }
 
-    public Workout(String name, LocalDate date) {
+    public Workout(String name, String body, LocalDate date) {
         this.name = name;
+        this.body = body;
         this.date = date;
     }
 
@@ -30,12 +33,16 @@ public class Workout {
         return name;
     }
 
-    public int getId() {
-        return id;
+    public String getBody() {
+        return body;
     }
 
     public LocalDate getDate() {
         return date;
+    }
+
+    public long getId() {
+        return id;
     }
 
     @Override
@@ -43,6 +50,7 @@ public class Workout {
         return "Workout{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", body='" + body + '\'' +
                 ", date=" + date +
                 '}';
     }

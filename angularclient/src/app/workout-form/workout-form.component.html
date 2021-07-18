@@ -10,6 +10,25 @@
                placeholder="Enter your name"
                required #name="ngModel">
       </div>
+      <div class="form-group">
+        <label for="name">Date</label>
+        <input type="date" [(ngModel)]="workout.date"
+               class="form-control"
+               id="date"
+               name="date"
+               placeholder="Enter Date"
+               required #date="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="name">Body</label>
+        <textarea [(ngModel)]="workout.body"
+               class="form-control"
+               id="body"
+               name="body"
+               placeholder="Enter Workout"
+               required #body="ngModel">
+        </textarea>
+      </div>
       <button type="submit" [disabled]="!workoutForm.form.valid"
               class="btn btn-info">Submit</button>
     </form>
