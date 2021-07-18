@@ -2,6 +2,7 @@ package com.tracker.exercise.controller;
 
 import com.tracker.exercise.entity.Workout;
 import com.tracker.exercise.repository.WorkoutRepository;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,7 +23,7 @@ public class WorkoutController {
         System.out.println("\n");
         workoutRepository.findAll().forEach(System.out::println);
 
-        return (List<Workout>) workoutRepository.findAll();
+        return (List<Workout>) workoutRepository.findAll(Sort.by("date").descending());
     }
 
     @GetMapping("/workouts/id/{id}")
