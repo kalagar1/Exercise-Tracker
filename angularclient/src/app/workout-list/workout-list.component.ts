@@ -33,5 +33,13 @@ export class WorkoutListComponent implements OnInit {
     this.workoutService.delete(id).subscribe(result => this.getData());
   }
 
+  editWorkout(wkt) {
+    this.router.navigate(['/addworkout'], { queryParams: { edit: wkt.id } });
+  }
+
+  duplicateWorkout(wkt) {
+    this.router.navigate(['/addworkout'], { queryParams: { dup: wkt.id } });
+  }
+
 
 }

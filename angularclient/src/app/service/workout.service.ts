@@ -16,6 +16,10 @@ export class WorkoutService {
     return this.http.get<Workout[]>(this.url);
   }
 
+  public findById(id): Observable<Workout> {
+    return this.http.get<Workout>(this.url+"/id/"+id);
+  }
+
   public save(workout: Workout) {
     return this.http.post<Workout>(this.url, workout);
   }

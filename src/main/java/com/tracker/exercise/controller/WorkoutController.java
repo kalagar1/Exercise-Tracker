@@ -5,6 +5,7 @@ import com.tracker.exercise.repository.WorkoutRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
@@ -22,6 +23,12 @@ public class WorkoutController {
         workoutRepository.findAll().forEach(System.out::println);
 
         return (List<Workout>) workoutRepository.findAll();
+    }
+
+    @GetMapping("/workouts/id/{id}")
+    public Workout getWorkoutbyId(@PathVariable String id) {
+        Optional<Workout> wkt =  workoutRepository.findById(Long.valueOf(id));
+        return wkt.get();
     }
 
     @PostMapping("/workouts")

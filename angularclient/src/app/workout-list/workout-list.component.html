@@ -16,9 +16,20 @@
         <td>{{ wkt.date }}</td>
         <td>{{ wkt.name }}</td>
         <td><pre>{{wkt.body}}</pre></td>
-        <td><input type="submit"
+        <td>
+          <input type="submit"
+                 class="btn btn-info"
+                 (click) = "editWorkout(wkt)" value="Edit">
+
+          <input type="submit"
+                 class="btn btn-primary"
+                 (click) = "duplicateWorkout(wkt)" value="Dup">
+
+          <input type="submit"
             class="btn btn-danger"
-                 (click) = "deleteWorkout(wkt.id)" value="Del"> </td>
+                 (click) = "deleteWorkout(wkt.id)" value="Del">
+
+        </td>
 
 
       </tr>
