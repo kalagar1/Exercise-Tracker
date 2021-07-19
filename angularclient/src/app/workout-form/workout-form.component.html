@@ -31,7 +31,10 @@
         </textarea>
       </div>
       <button type="submit" [disabled]="!workoutForm.form.valid"
-              class="btn btn-info">Save</button>
+              class="btn btn-outline-success">Save</button>
+
+      <button (click)="this.gotoWorkoutList()"
+              class="btn btn-outline-dark ml-3">Cancel</button>
     </form>
   </div>
 </div>

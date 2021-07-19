@@ -14,21 +14,30 @@ import java.util.stream.Stream;
 public class Application {
 
 	public static void main(String[] args) {
-
 		SpringApplication.run(Application.class, args);
-
 		System.out.println("Hello World");
 	}
 
 	@Bean
 	CommandLineRunner init(WorkoutRepository workoutRepository) {
+
 		return args -> {
-			Stream.of("John", "Julie", "Jennifer", "Helen", "Rachel").forEach(name -> {
-				Workout wkt = new Workout(name, "body testing 123 fsdafasfsa", LocalDate.now());
-				workoutRepository.save(wkt);
-			});
+			Workout wkt = new Workout("back day", "Pull-ups: 5*5 35 lbs", LocalDate.now());
+			workoutRepository.save(wkt);
+
+			wkt = new Workout("full body day", "Deadlift: 5*3 225 lbs", LocalDate.now());
+			workoutRepository.save(wkt);
+
+			wkt = new Workout("mobility work", "Jefferson curl \nHip flexor couch stretch \nShin boxes", LocalDate.now());
+			workoutRepository.save(wkt);
+
+			wkt = new Workout("lower body work", "Split squat: 3*5 45 lbs", LocalDate.now());
+			workoutRepository.save(wkt);
+
+
 			workoutRepository.findAll().forEach(System.out::println);
 		};
+
 	}
 
 }
