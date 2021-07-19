@@ -1,3 +1,5 @@
 # Exercise-Tracker
 
-Java spring web app
+Web app that allows users to track their exercise.
+
+Angular frontend and Java spring backend.
