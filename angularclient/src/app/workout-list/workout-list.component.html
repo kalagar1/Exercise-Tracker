@@ -3,31 +3,29 @@
     <table class="table table-bordered table-striped">
       <thead class="thead-dark">
       <tr>
-        <th scope="col">#</th>
         <th scope="col">Date</th>
-        <th scope="col">Name</th>
+        <th scope="col">Title</th>
         <th scope="col">Body</th>
         <th scope="col">Controls</th>
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let wkt of workouts">
-        <td>{{ wkt.id }}</td>
         <td>{{ wkt.date }}</td>
         <td>{{ wkt.name }}</td>
         <td><pre>{{wkt.body}}</pre></td>
         <td>
-          <input type="submit"
-                 class="btn btn-info"
-                 (click) = "editWorkout(wkt)" value="Edit">
+          <button type="submit"
+                 class="btn btn-outline-info"
+                 (click) = "editWorkout(wkt)"><i class="bi bi-pen-fill"></i></button>
 
-          <input type="submit"
-                 class="btn btn-primary"
-                 (click) = "duplicateWorkout(wkt)" value="Dup">
+          <button type="submit"
+                 class="btn btn-outline-primary"
+                  (click) = "duplicateWorkout(wkt)"><i class="bi bi-subtract"></i></button>
 
-          <input type="submit"
-            class="btn btn-danger"
-                 (click) = "deleteWorkout(wkt.id)" value="Del">
+          <button type="submit"
+            class="btn btn-outline-danger"
+                  (click) = "deleteWorkout(wkt.id)"><i class="bi bi-trash"></i></button>
 
         </td>
 

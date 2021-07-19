@@ -1,0 +1,9 @@
+
+button {
+  opacity: 0;
+}
+
+tr:hover button {
+  opacity: 1;
+	transition: 0.3s all ease-in-out;
+}

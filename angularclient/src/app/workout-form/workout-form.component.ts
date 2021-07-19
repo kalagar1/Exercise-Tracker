@@ -22,9 +22,9 @@ export class WorkoutFormComponent {
   ngOnInit() {
      this.route.queryParams
           .subscribe(params => {
-            if params.edit {
+            if (params.edit) {
                 this.workoutService.findById(params.edit).subscribe(result => this.workout = result);
-            } else if params.dup {
+            } else if (params.dup) {
                 this.workoutService.findById(params.dup).subscribe(result => {
               delete result.id;
                 this.workout = result;
