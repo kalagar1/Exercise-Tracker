@@ -1,19 +1,24 @@
 <div class="container">
-  <div class="row">
+
+
+  <div class="row" id="appHeader">
+    <div class="col-md-1">
+      <a routerLink="/workouts">
+        <img id="kbImg" src="assets/kettlebell.png">
+      </a>
+    </div>
+
+    <div class="col-md-5">
+      <h1 class="">{{ title }}</h1>
+    </div>
+
+    <div class="col-md-6">
+      <a id="addIcon"  routerLink="/addworkout"><i class="bi bi-plus-circle"></i></a>
+    </div>
+  </div>
+
+  <div class="row" id="table">
     <div class="col-md-12">
-      <div class="card bg-dark my-5">
-        <div class="card-body">
-          <h2 class="card-title text-center text-white py-3">{{ title }}</h2>
-          <ul class="text-center list-inline py-3">
-            <li class="list-inline-item">
-              <a routerLink="/workouts" class="btn btn-info">List Workouts</a>
-            </li>
-            <li class="list-inline-item">
-              <a routerLink="/addworkout" class="btn btn-info">Add Workouts</a>
-            </li>
-          </ul>
-        </div>
-      </div>
       <router-outlet></router-outlet>
     </div>
   </div>
